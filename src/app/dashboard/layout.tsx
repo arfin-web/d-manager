@@ -13,7 +13,9 @@ export default function RootLayout({
             <body className={inter.className}>
                 <div className='flex flex-col lg:flex-row justify-start'>
                     <Sidebar />
-                    {children}
+                    <div className='w-full'>
+                        {children}
+                    </div>
                 </div>
             </body>
         </html>

@@ -9,7 +9,9 @@ const MainNav = () => {
                 <nav className="flex flex-wrap items-center justify-between py-4 md:py-6 ">
                     <Link href="/" className="text-base lg:text-2xl text-primary font-bold">D-Manager</Link>
                     <div className="flex justify-center items-center gap-4">
-                        <Button size='lg'>Try It Now</Button>
+                        <Link href='/dashboard'>
+                            <Button size='lg'>Try It Now</Button>
+                        </Link>
                         <ModeToggle />
                     </div>
                 </nav>
