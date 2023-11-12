@@ -1,42 +1,31 @@
+import { Button } from "@/components/ui/button"
 import {
-    CreditCard,
-    LayoutDashboard,
-    Settings,
-} from "lucide-react"
-
-import {
-    Command,
-    CommandGroup,
-    CommandItem,
-    CommandList,
-    CommandSeparator,
-    CommandShortcut,
-} from "@/components/ui/command"
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import SidebarItems from "./SidebarItems"
+import { AlignJustify } from 'lucide-react'
 
 const Sidebar = () => {
     return (
-        <Command className="rounded-lg w-60 h-screen border shadow-md">
-            <CommandList>
-                <CommandSeparator />
-                <CommandGroup>
-                    <CommandItem className="mt-3 text-primary">
-                        <LayoutDashboard className="mr-2 h-4 w-4" />
-                        <span className="text-lg">Dashboard</span>
-                        <CommandShortcut>⌘D</CommandShortcut>
-                    </CommandItem>
-                    <CommandItem className="mt-3 text-primary">
-                        <CreditCard className="mr-2 h-4 w-4" />
-                        <span className="text-lg">Billing</span>
-                        <CommandShortcut>⌘B</CommandShortcut>
-                    </CommandItem>
-                    <CommandItem className="mt-3 text-primary">
-                        <Settings className="mr-2 h-4 w-4" />
-                        <span className="text-lg">Settings</span>
-                        <CommandShortcut>⌘S</CommandShortcut>
-                    </CommandItem>
-                </CommandGroup>
-            </CommandList>
-        </Command>
+        <>
+            <div className="lg:hidden">
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="outline" className="ml-2 mt-2">
+                            <AlignJustify />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-fit border-none">
+                        <SidebarItems />
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
+            <div className="hidden lg:block">
+                <SidebarItems />
+            </div>
+        </>
     )
 }
 

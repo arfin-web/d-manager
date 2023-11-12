@@ -11,7 +11,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className='flex justify-start'>
+                <div className='flex flex-col lg:flex-row justify-start'>
                     <Sidebar />
                     {children}
                 </div>
