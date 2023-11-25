@@ -8,6 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import DialogBox from "@/components/views/dashboard/DialogBox"
 
 const employees = [
     {
@@ -37,6 +38,20 @@ const Employees = () => {
     return (
         <div className=" container mx-auto px-2 lg:px-5 my-10">
             <h1 className="text-2xl font-bold text-center lg:text-3xl mb-6">All Employees</h1>
+            <div className="flex justify-end">
+                <DialogBox
+                    buttonText='Add New'
+                    buttonVarient='default'
+                    buttonSize='sm'
+                    title='Add New Employee'
+                    forWhatOne='name'
+                    labelOne='Name'
+                    valueOne='Mr John'
+                    forWhatTwo='designation'
+                    labelTwo='Designation'
+                    valueTwo='Marketing Officer'
+                />
+            </div>
             <Table>
                 <TableHeader>
                     <TableRow>
@@ -65,8 +80,19 @@ const Employees = () => {
                             </TableCell>
                             <TableCell className="text-right">
                                 <div className="flex flex-col lg:flex-row justify-end items-center gap-2">
-                                    <Button variant='outline' size='sm'>Edit</Button>
-                                    <Button size='sm'>Remove</Button>
+                                    <DialogBox
+                                        buttonText='Edit'
+                                        buttonVarient='outline'
+                                        buttonSize='sm'
+                                        title='Edit Employee'
+                                        forWhatOne='name'
+                                        labelOne='Name'
+                                        valueOne='Mr John'
+                                        forWhatTwo='designation'
+                                        labelTwo='Designation'
+                                        valueTwo='Marketing Officer'
+                                    />
+                                    <Button size='sm' variant='destructive'>Remove</Button>
                                 </div>
                             </TableCell>
                         </TableRow>

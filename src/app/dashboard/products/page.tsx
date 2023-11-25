@@ -8,6 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import DialogBox from "@/components/views/dashboard/DialogBox"
 
 const products = [
     {
@@ -37,6 +38,20 @@ const Products = () => {
     return (
         <div className=" container mx-auto px-2 lg:px-5 my-10">
             <h1 className="text-2xl font-bold text-center lg:text-3xl mb-6">All Products</h1>
+            <div className="flex justify-end">
+                <DialogBox
+                    buttonText='Add New'
+                    buttonVarient='default'
+                    buttonSize='sm'
+                    title='Add New Product'
+                    forWhatOne='name'
+                    labelOne='Name'
+                    valueOne='Iphone 12'
+                    forWhatTwo='description'
+                    labelTwo='Description'
+                    valueTwo='Great Product'
+                />
+            </div>
             <Table>
                 <TableHeader>
                     <TableRow>
@@ -65,8 +80,19 @@ const Products = () => {
                             </TableCell>
                             <TableCell className="text-right">
                                 <div className="flex flex-col lg:flex-row justify-end items-center gap-2">
-                                    <Button variant='outline' size='sm'>Edit</Button>
-                                    <Button size='sm'>Delete</Button>
+                                    <DialogBox
+                                        buttonText='Edit'
+                                        buttonVarient='outline'
+                                        buttonSize='sm'
+                                        title='Edit Product'
+                                        forWhatOne='name'
+                                        labelOne='Name'
+                                        valueOne='Iphone 12'
+                                        forWhatTwo='description'
+                                        labelTwo='Description'
+                                        valueTwo='Great Product'
+                                    />
+                                    <Button size='sm' variant='destructive'>Delete</Button>
                                 </div>
                             </TableCell>
                         </TableRow>
