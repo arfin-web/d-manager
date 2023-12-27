@@ -26,8 +26,8 @@ const features = [
 const Features = () => {
     return (
         <>
-            <div className="container mx-auto px-2 lg:px-20 mb-20">
-                <h1 className="text-2xl lg:text-4xl font-bold text-center py-8">Key <span className="text-primary">Features</span></h1>
+            <div className="container mx-auto px-2 lg:px-20 mb-10">
+                <h1 className="text-2xl lg:text-4xl font-bold text-center pb-8">Key <span className="text-primary">Features</span></h1>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-stretch">
                     {
                         features.map((feature) => (
