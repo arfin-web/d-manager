@@ -1,5 +1,12 @@
-import NextAuth from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
 
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+import { getServerSession } from 'next-auth';
+import { NextResponse } from 'next/server';
+
+export async function GET(request: Request) {
+    const session = await getServerSession(authOptions);
+    console.log(session);
+    return NextResponse.json({
+        id: 1,
+    });
+}
